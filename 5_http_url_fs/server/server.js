@@ -1,6 +1,7 @@
 const http=require("http")
     const fs=require("fs")
     const url=require("url")
+  
 
     const app=http.createServer((req,res)=>{
         let urlpath=url.parse(req.url)
@@ -16,4 +17,7 @@ const http=require("http")
                 else{
                     res.end(fs.readFileSync("../client/pages/404.html"))
                 }
+    })
+    app.listen(3000,()=>{
+        console.log("server started")
     })
